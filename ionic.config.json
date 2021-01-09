@@ -1,0 +1,7 @@
+{
+  "name": "wash-app-ion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
