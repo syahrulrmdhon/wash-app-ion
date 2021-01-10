@@ -39,21 +39,33 @@ const StatusContainer: React.FC = () => {
         </IonListHeader>
         {dataList &&
           dataList.length > 0 &&
-          dataList.map(({ customer_name, amount, total_price }) => (
+          dataList.map(({ customer_name, amount, total_price, washed }) => (
             <React.Fragment>
               <IonCard>
                 <IonGrid>
                   <IonRow>
-                    <IonCol size="5"><strong>Name:</strong></IonCol>
+                    <IonCol size="5">
+                      <strong>Name:</strong>
+                    </IonCol>
                     <IonCol>{customer_name}</IonCol>
                   </IonRow>
                   <IonRow>
-                    <IonCol size="5"><strong>Amount:</strong></IonCol>
+                    <IonCol size="5">
+                      <strong>Amount:</strong>
+                    </IonCol>
                     <IonCol>{amount}</IonCol>
                   </IonRow>
                   <IonRow>
-                    <IonCol size="5"><strong>Total Price:</strong></IonCol>
+                    <IonCol size="5">
+                      <strong>Total Price:</strong>
+                    </IonCol>
                     <IonCol>{total_price}</IonCol>
+                  </IonRow>
+                  <IonRow>
+                    <IonCol size="5">
+                      <strong>Status:</strong>
+                    </IonCol>
+                    <IonCol>{washed ? "washed" : "On Progress"}</IonCol>
                   </IonRow>
                 </IonGrid>
               </IonCard>
