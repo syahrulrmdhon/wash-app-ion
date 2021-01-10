@@ -32,33 +32,35 @@ const StatusContainer: React.FC = () => {
     };
   }, []);
   return (
-    <IonList>
-      <IonListHeader lines="none">
-        <IonLabel>List Orders</IonLabel>
-      </IonListHeader>
-      {dataList &&
-        dataList.length > 0 &&
-        dataList.map(({ customer_name, amount, total_price }) => (
-          <React.Fragment>
-            <IonCard>
-              <IonGrid>
-                <IonRow>
-                  <IonCol size="5">Name:</IonCol>
-                  <IonCol>{customer_name}</IonCol>
-                </IonRow>
-                <IonRow>
-                  <IonCol size="5">Amount:</IonCol>
-                  <IonCol>{amount} Kg</IonCol>
-                </IonRow>
-                <IonRow>
-                  <IonCol size="5">Total Price:</IonCol>
-                  <IonCol>{total_price}</IonCol>
-                </IonRow>
-              </IonGrid>
-            </IonCard>
-          </React.Fragment>
-        ))}
-    </IonList>
+    <React.Fragment>
+      <IonList>
+        <IonListHeader lines="none">
+          <IonLabel>List Orders</IonLabel>
+        </IonListHeader>
+        {dataList &&
+          dataList.length > 0 &&
+          dataList.map(({ customer_name, amount, total_price }) => (
+            <React.Fragment>
+              <IonCard>
+                <IonGrid>
+                  <IonRow>
+                    <IonCol size="5"><strong>Name:</strong></IonCol>
+                    <IonCol>{customer_name}</IonCol>
+                  </IonRow>
+                  <IonRow>
+                    <IonCol size="5"><strong>Amount:</strong></IonCol>
+                    <IonCol>{amount}</IonCol>
+                  </IonRow>
+                  <IonRow>
+                    <IonCol size="5"><strong>Total Price:</strong></IonCol>
+                    <IonCol>{total_price}</IonCol>
+                  </IonRow>
+                </IonGrid>
+              </IonCard>
+            </React.Fragment>
+          ))}
+      </IonList>
+    </React.Fragment>
   );
 };
 
