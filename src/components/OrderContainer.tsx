@@ -11,10 +11,15 @@ import {
   IonCol,
   IonCardSubtitle,
   IonIcon,
+  IonFab,
+  IonFabButton,
+  IonLoading,
+  IonToast,
 } from "@ionic/react";
 import {
   bagHandleOutline,
   pricetagOutline,
+  radioButtonOnOutline,
   walletOutline,
 } from "ionicons/icons";
 import "./OrderContainer.css";
@@ -22,6 +27,8 @@ import "./OrderContainer.css";
 const OrderContainer: React.FC = () => {
   const [amount, setAmount] = useState("0");
   const [totalPrice, setTotalPrice] = useState(0);
+  const [showLoading, setShowLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const formatRupiah = (num: any) => {
     let thousand;
@@ -34,6 +41,11 @@ const OrderContainer: React.FC = () => {
 
   return (
     <React.Fragment>
+      <IonFab vertical="top" horizontal="end" slot="fixed">
+        <IonFabButton color="warning">
+          <IonIcon icon={radioButtonOnOutline} />
+        </IonFabButton>
+      </IonFab>
       <div className="shape-top">
         <div className="container top">
           <p>
@@ -69,7 +81,7 @@ const OrderContainer: React.FC = () => {
         </div>
       </div>
       <div className="container form">
-        <form className="ion-padding">
+        <div className="ion-padding">
           <IonItem>
             <IonLabel position="floating">Customer Name</IonLabel>
             <IonInput />
@@ -94,10 +106,40 @@ const OrderContainer: React.FC = () => {
             <IonLabel position="fixed">Total</IonLabel>
             {formatRupiah(totalPrice)}
           </IonItem>
-          <IonButton className="ion-margin-top" type="submit" expand="block">
+          <IonButton
+            onClick={() => setShowLoading(true)}
+            className="ion-margin-top"
+            type="button"
+            expand="block"
+          >
             Submit
           </IonButton>
-        </form>
+        </div>
+        <IonLoading
+          cssClass="my-custom-class"
+          isOpen={showLoading}
+          onDidDismiss={() => {
+            setShowLoading(false);
+            setShowToast(true);
+          }}
+          message={"Please wait..."}
+          duration={5000}
+        />
+        <IonToast
+          isOpen={showToast}
+          onDidDismiss={() => setShowToast(false)}
+          message="Submitted Successfully"
+          position="top"
+          buttons={[
+            {
+              text: "Done",
+              role: "cancel",
+              handler: () => {
+                console.log("Cancel clicked");
+              },
+            },
+          ]}
+        />
       </div>
     </React.Fragment>
   );
