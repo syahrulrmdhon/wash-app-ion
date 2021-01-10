@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import {
   IonItem,
   IonLabel,
@@ -25,6 +26,7 @@ import {
 import "./OrderContainer.css";
 
 const OrderContainer: React.FC = () => {
+  const [name, setName] = useState("");
   const [amount, setAmount] = useState("0");
   const [totalPrice, setTotalPrice] = useState(0);
   const [showLoading, setShowLoading] = useState(false);
@@ -37,6 +39,27 @@ const OrderContainer: React.FC = () => {
     thousand = thousand.join(".").split("").reverse().join("");
 
     return `Rp ${thousand},-`;
+  };
+
+  const onSubmitOrder = (params: any) => {
+    setShowLoading(true);
+    const { name, amount, totalPrice } = params;
+    const BASE_URL = `http://localhost:8080/api/orders`;
+    const dataPost = {
+      customer_name: name,
+      amount,
+      total_price: totalPrice,
+    };
+    axios
+      .post(BASE_URL, dataPost)
+      .then((res) => res.data)
+      .then((data) => {
+        setShowLoading(false);
+        setShowToast(true);
+        setName("");
+        setAmount("0");
+        setTotalPrice(0);
+      });
   };
 
   return (
@@ -84,7 +107,10 @@ const OrderContainer: React.FC = () => {
         <div className="ion-padding">
           <IonItem>
             <IonLabel position="floating">Customer Name</IonLabel>
-            <IonInput />
+            <IonInput
+              type="text"
+              onIonChange={(e) => setName(e.detail.value!)}
+            />
           </IonItem>
           <IonItem>
             <IonLabel position="floating">Amount (Kg)</IonLabel>
@@ -107,7 +133,14 @@ const OrderContainer: React.FC = () => {
             {formatRupiah(totalPrice)}
           </IonItem>
           <IonButton
-            onClick={() => setShowLoading(true)}
+            onClick={() => {
+              const params = {
+                name,
+                amount,
+                totalPrice,
+              }
+              onSubmitOrder(params);
+            }}
             className="ion-margin-top"
             type="button"
             expand="block"

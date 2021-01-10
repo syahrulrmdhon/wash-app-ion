@@ -3,7 +3,6 @@ import axios from "axios";
 import {
   IonList,
   IonListHeader,
-  IonItem,
   IonLabel,
   IonGrid,
   IonCol,
@@ -24,7 +23,7 @@ const StatusContainer: React.FC = () => {
       .then((res) => res.data)
       .then((data) => {
         if (isMounted) {
-          setDataList(data);
+          setDataList(data.reverse());
         }
       });
     return () => {
