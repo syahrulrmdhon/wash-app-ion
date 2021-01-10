@@ -1,3 +1,52 @@
 ion-item {
-    margin: 20px 0;
+  margin: 20px 0;
+}
+
+.shape-top {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  height: 30%;
+  border-radius: 0 0 40% 40%;
+  background-color: #3880ff;
+  background: repeating-linear-gradient(45deg, #73a1f0 0%, #3880ff 10%, #3880ff 0%, #829bc6 50%) 0 / 15px 15px;
+}
+
+.container.form {
+  top: 62%;
+}
+
+.container.top {
+  top: 80%;
+  height: 40vh;
+  transform: translateY(-50%);
+  text-align: unset;
+}
+
+.container.top ion-col {
+  text-align: center;
+}
+
+.container.top ion-button {
+  display: block;
+  margin-bottom: 10px;
+}
+
+ion-card {
+  margin-top: 15%;
+}
+
+.container.top p {
+  font-size: 2em;
+  margin: 0 5vw;
+}
+
+.container.top a {
+  text-decoration: none;
+}
+
+.container.top p a {
+  color: #ffdd1b;
+  font-family: Pacifico;
 }

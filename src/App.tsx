@@ -10,7 +10,7 @@ import {
   IonTabs,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import { alarm, receipt, peopleCircleOutline } from "ionicons/icons";
+import { receipt, peopleCircleOutline, arrowUpCircleOutline } from "ionicons/icons";
 import Order from "./pages/Order";
 import Status from "./pages/Status";
 import Tab3 from "./pages/Profile";
@@ -54,7 +54,7 @@ const App: React.FC = () => (
             <IonLabel>Order</IonLabel>
           </IonTabButton>
           <IonTabButton tab="status" href="/status">
-            <IonIcon icon={alarm} />
+            <IonIcon icon={arrowUpCircleOutline} />
             <IonLabel>Status</IonLabel>
           </IonTabButton>
           <IonTabButton tab="profile" href="/profile">
