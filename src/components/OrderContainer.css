@@ -33,7 +33,7 @@ ion-item {
   margin-bottom: 10px;
 }
 
-ion-card {
+.container.top ion-card {
   margin-top: 15%;
 }
 
