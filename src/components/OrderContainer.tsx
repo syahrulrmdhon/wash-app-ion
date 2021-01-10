@@ -47,7 +47,7 @@ const OrderContainer: React.FC = () => {
     const BASE_URL = `http://localhost:8080/api/orders`;
     const dataPost = {
       customer_name: name,
-      amount,
+      amount: `${amount}kg`,
       total_price: totalPrice,
     };
     axios
