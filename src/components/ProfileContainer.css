@@ -1,0 +1,57 @@
+.container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 2em;
+  margin: 0 5vw;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+p a {
+  color: #ffdd1b;
+  font-family: Pacifico;
+}
+
+p.about {
+  font-size: small;
+  margin: 5vh;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.about-img {
+  text-align: center;
+  width: 50vw;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+

@@ -72,7 +72,7 @@ const OrderContainer: React.FC = () => {
       <div className="shape-top">
         <div className="container top">
           <p>
-            <a href="https://en.wikipedia.org/wiki/Red">Wash App</a>
+            <a href="/">Wash App</a>
           </p>
           <IonCard>
             <IonCardHeader>
