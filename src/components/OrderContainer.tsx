@@ -109,6 +109,7 @@ const OrderContainer: React.FC = () => {
             <IonLabel position="floating">Customer Name</IonLabel>
             <IonInput
               type="text"
+              value={name}
               onIonChange={(e) => setName(e.detail.value!)}
             />
           </IonItem>

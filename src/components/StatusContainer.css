@@ -1,0 +1,19 @@
+.close {
+  padding: 0 !important;
+  background: #c9302c;
+  color: #fff;
+  border-radius: 50px;
+  height: fit-content;
+  width: fit-content;
+}
+
+.close-wrapper {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+.close-icon {
+    font-size: 20px;
+}
