@@ -13,7 +13,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import { receipt, peopleCircleOutline, arrowUpCircleOutline } from "ionicons/icons";
 import Order from "./pages/Order";
 import Status from "./pages/Status";
-import Tab3 from "./pages/Profile";
+import Profile from "./pages/Profile";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -41,7 +41,7 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Route path="/order" component={Order} exact={true} />
           <Route path="/status" component={Status} exact={true} />
-          <Route path="/profile" component={Tab3} />
+          <Route path="/profile" component={Profile} />
           <Route
             path="/"
             render={() => <Redirect to="/order" />}

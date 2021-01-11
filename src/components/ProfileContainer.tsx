@@ -3,7 +3,6 @@ import { IonGrid, IonRow, IonCol } from "@ionic/react";
 import hero from "../assets/hero-wash-app.png";
 import about from "../assets/about-wash-app.png";
 import washed from "../assets/washed.png";
-import busy from "../assets/busy.png";
 import "./ProfileContainer.css";
 
 const ProfileContainer: React.FC = () => {
@@ -51,9 +50,8 @@ const ProfileContainer: React.FC = () => {
         <IonRow>
           <IonCol>
             <h1 style={{ textAlign: "center" }}>
-              <strong>Kamu sibuk? Pakai Wash App</strong>
+              <strong>Kamu sibuk? Pakai Wash App Aja</strong>
             </h1>
-            <img alt="busy" src={busy} />
             <h1 style={{ color: "#ffdd1b", textAlign: "center" }}>
               #GakPakeRibet
             </h1>
